@@ -6,49 +6,56 @@
     <title></title>
   </head>
   <body>
-    <h1>Built for developers</h1>
+    <h1>Github<br>
+        Built for developers</h1>
 
-    <!-- FORM: NEW ACCOUNT -->
+    <!-- FORM: NEW USER ACCOUNT -->
     <form class="" action="index.html" method="post">
 
       <fieldset>
 
         <!-- USERNAME -->
-        <label class=text-label for=username>Username</label>
-        <input class=text-input id=username type=text name=username placeholder="Pick a username" required>
-        <br>
+        <label id=username-label class=text-label for=username>Username</label>
+        <!-- pattern: alphanum w/ embedded single dashes -->
+        <input id=username type=text name=username autofocus
+               placeholder="Pick a username"
+               pattern="[a-zA-Z0-9]([a-zA-Z0-9]|-[a-zA-Z0-9])*"
+               minlength=1 maxlength=15>
+        <span><!-- Required for the valid/invaid :after styles --></span>
 
         <!-- EMAIL -->
-        <label class=text-label for=email>Email</label>
-        <input class=text-input id=email   type=email name=email placeholder="you@example.com" required>
-        <br>
+        <label id=email-label class=text-label for=email>Email</label>
+        <!--  add addl pattern to chk email as default is insufficient (default allows "ed@xyz" with no ".com" -->
+        <input id=email type=email name=email placeholder="you@example.com"
+               pattern="[A-Za-z][A-Za-z0-9\-]*@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+">
+        <span><!-- Required for the valid/invaid :after styles --></span>
 
         <!-- PASSWORD -->
-        <label class=text-label for=password>Password</label>
-        <input class=text-input id=password type=password name=password placeholder="Create a password" required>
-        <br>
+        <label id=password-label class=text-label for=password>Password</label>
+        <input id=password type=password name=password placeholder="Create a password" minlength=7 maxlength=15>
+        <span><!-- Required for the valid/invaid :after styles --></span>
 
         <!-- SERVICE -->
         <div>
-          <span class=text-label>Service</span>
-          <input class=radio-chk-btn id=service-enterprise type=radio name=service required>
+          <span class=text-label>Type of Service</span>
+          <input id=service-enterprise type=radio name=service required>
           <label class=radio-chk-label for=service-enterprise>Enterprise</label>
 
-          <input class=radio-chk-btn id=service-pro type=radio name=service required>
+          <input id=service-pro type=radio name=service required>
           <label class=radio-chk-label for=service-pro>Pro</label>
 
-          <input class=radio-chk-btn id=service-free type=radio name=service required>
+          <input id=service-free type=radio name=service required>
           <label class=radio-chk-label for=service-free>Free</label>
         </div>
 
         <!-- REMEMBER ME -->
-        <span class=text-label>Remember me</span>
-        <input class=radio-chk-btn id=remember-me type=checkbox name=remember-me>
-        <label class=radio-chk-label for="remember-me">I'm very needy!</label>
+        <label class=text-label for=remember-me>Remember me</label>
+        <input id=remember-me type=checkbox name=remember-me>
+        <label class=radio-chk-label for="remember-me">I make a great first impression!</label>
 
         <!-- SUBMIT -->
         <div class=submit-div>
-          <button type=submit>Sign up for Github</button>
+          <button id=submit-btn type=submit>Sign up for Github</button>
         </div>
         <p>By clicking “Sign up for GitHub”, you agree to our <a href="#">terms of service</a> and <a href="#">privacy statement</a>. We’ll occasionally send you account related emails.</p>
       </fieldset>
